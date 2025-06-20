@@ -29,7 +29,8 @@ export const getReviews = async () => {
             bookId: sale.book._id,
             customerId: sale.customerId,
             title: faker.book.title(),
-            content: faker.lorem.text()
+            content: faker.lorem.text(),
+            score: Math.floor(Math.random() * 6)
         };
     });
 
