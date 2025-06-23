@@ -1,0 +1,23 @@
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list > .element {
+    padding: 5px 0;
+}
+
+.list > .element:nth-child(even) {
+    background-color: rgb(207, 227, 252);
+}
+
+.list > .element .title {
+    font-size: 1.2em;
+}
+
+.list > .element .sub-title {
+    color: rgb(77, 77, 77);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.9em;
+}

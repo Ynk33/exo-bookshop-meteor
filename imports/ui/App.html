@@ -1,3 +1,24 @@
 <body>
-    <h1>Back-Office</h1>
+    <nav>
+        <span class="title">Bookshop Back-Office</span>
+    </nav>
+    
+    {{> main}}
 </body>
+
+<template name="main">
+    <main>
+        <div class="side-bar">
+            <a href="#" class="link" data-route="dashboard">Dashboard</a>
+            <a href="#" class="link" data-route="books">Books</a>
+        </div>
+
+        <div class="container">
+            {{> UI.dynamic template=getTemplate}}
+        </div>
+    </main>
+</template>
+
+<template name="notImplemented">
+    Template not implemented yet.
+</template>

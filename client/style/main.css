@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+
+    min-width: 100%;
+    flex-grow: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    flex-grow: 1;
+    padding: 0 10px;
+}

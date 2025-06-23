@@ -1,0 +1,12 @@
+nav {
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid black;
+}
+
+nav > .title {
+    font-size: 1.5em;
+}

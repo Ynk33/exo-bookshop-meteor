@@ -1,0 +1,12 @@
+<template name="bookList">
+    <h1>Books</h1>
+    <div class="list">
+        {{#if isLoading}}
+            Loading...
+        {{else}}
+            {{#each books}}
+                {{> bookRow}}
+            {{/each}}
+        {{/if}}
+    </div>
+</template>
