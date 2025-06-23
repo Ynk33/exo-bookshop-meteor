@@ -3,30 +3,24 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 
 import './App.html';
 import './management/BookList';
+import './management/Dashboard';
 
-const STATE_STRING = 'state';
-const APP_STATES = {
-    'books': 0,
-    'dashboard': 1,
+const TEMPLATE_STRING = 'template';
+const APP_TEMPLATES = {
+    'books': 'bookList',
+    'dashboard': 'dashboard',
 }
 
 Template.main.onCreated(function onMainTemplateCreated() {
     this.state = new ReactiveDict();
 
-    this.state.set(STATE_STRING, APP_STATES['dashboard']);
+    this.state.set(TEMPLATE_STRING, APP_TEMPLATES['dashboard']);
 });
 
 Template.main.helpers({
     getTemplate() {
         const instance = Template.instance();
-        
-        switch(instance.state.get(STATE_STRING)) {
-            case APP_STATES['books']:
-                return 'bookList';
-            
-            default:
-                return 'notImplemented'; 
-        }
+        return instance.state.get(TEMPLATE_STRING);
     }
 });
 
@@ -34,6 +28,6 @@ Template.main.events({
     'click .link'(e, instance) {
         e.preventDefault();
 
-        instance.state.set(STATE_STRING, APP_STATES[e.target.dataset.route]);
+        instance.state.set(TEMPLATE_STRING, APP_TEMPLATES[e.target.dataset.route]);
     }
 })

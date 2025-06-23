@@ -10,7 +10,7 @@ export const getBooks = async () => {
     {
         books.push({
             title: faker.book.title(),
-            price: faker.commerce.price({min: 5, max: 80}),
+            price: parseFloat(faker.commerce.price({min: 5, max: 80})),
             genre: faker.helpers.multiple(faker.book.genre, { min: 1, max: 5 }),
             authors: utils.array.getRandomNumberOfElementFrom(authors, 3),
         });

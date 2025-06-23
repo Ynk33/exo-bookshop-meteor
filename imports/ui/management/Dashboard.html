@@ -1,0 +1,26 @@
+<template name="dashboard">
+    <h1>Dashboard</h1>
+    <div class="container">
+        <h2>Best Selling Genre</h2>
+        <table>
+            <tr>
+                <th></th>
+                {{#each bestSellers}}
+                    <th>{{_id}}</th>
+                {{/each}}
+            </tr>
+            <tr>
+                <td>Total Sales</td>
+                {{#each bestSellers}}
+                    <td>{{salesCount}}</td>
+                {{/each}}
+            </tr>
+            <tr>
+                <td>Total Revenue</td>
+                {{#each bestSellers}}
+                    <td>{{revenue}}€</td>
+                {{/each}}
+            </tr>
+        </table>
+    </div>
+</template>
